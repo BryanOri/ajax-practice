@@ -31,19 +31,21 @@
 
   $.ajax({
 
-    url: "https: www.omdbapi.com/?t=the+revenant&y=&plot=short&apikey=trilogy",
+    url: "https://www.omdbapi.com/?t=the+revenant&y=&plot=short&apikey=trilogy",
     method: "GET"
 
   }).then(function(response){
 
     console.log(response.Plot)
-  }).then(function(response){
-
-  console.log(response.Awards)
-  }).then(function(response){
-
-  console.log(response.Langauge)
   })
+  $.ajax({
+
+    url: "https://www.omdbapi.com/?t=god+father&y=&plot=short&apikey=trilogy",
+    method: "GET"
+
+    }).then(function(response){
+      console.log(response.Awards);
+    });
 
     //"https://www.omdbapi.com/?t=god+father&y=&plot=short&apikey=trilogy"
     //console.log Awards
@@ -52,12 +54,26 @@
     //"https://www.omdbapi.com/?t=space+jam&y=&plot=short&apikey=trilogy"
     //Step 2: console.log Language
 
+    $.ajax({
 
+      url: "https://www.omdbapi.com/?t=space+jam&y=&plot=short&apikey=trilogy",
+      method: "GET"
+
+      }).then(function(response){
+        console.log(response.Language)
+       });
 
     //Based on the previous example,
     //Write AJAX call for any other movie using the same format
-    
+       
+    $.ajax({
 
+    url: "http://www.omdbapi.com/?t=Bee+movie&y=2007&plot=full&apikey=trilogy",
+    method: "GET"
+
+    }).then(function(response){
+      console.log(response)
+    });
    
 
 
